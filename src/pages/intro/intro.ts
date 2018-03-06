@@ -24,6 +24,7 @@ export class IntroPage {
   }
 
   goToHome(){
+    console.log("chamou funcao");
     this.navCtrl.push(TabsPage);
   }
 

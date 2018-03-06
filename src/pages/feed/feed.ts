@@ -19,7 +19,7 @@ import { MoovieProvider } from '../../providers/moovie/moovie';
 })
 export class FeedPage {
 
-  public nome:string = "Leonardo Ferreira de Melo";
+  public listaFilme = new Array();
 
   constructor(
     public navCtrl: NavController, 
@@ -28,15 +28,14 @@ export class FeedPage {
   ) {
   }
 
-  public soma(num1:number, num2:number):void{
-    alert(num1+num2);
-  }
 
   ionViewDidLoad() {
     console.log('entrou no controler');
     this.movieProvider.getLastMovies().subscribe(
       data=>{
-        console.log(JSON.parse((data as any)._body));
+        let objRetorno = JSON.parse((data as any)._body);
+        console.log(objRetorno.results);
+        this.listaFilme = objRetorno.results;
       },error=>{
         console.log(error);
       }
