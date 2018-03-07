@@ -28,7 +28,7 @@ export class MyApp {
       
       if(config == null){
         this.rootPage = IntroPage;
-        configProvider.setConfigData(false);
+        configProvider.setConfigData(false, "", "");
       }else{
         this.rootPage = TabsPage;
       }

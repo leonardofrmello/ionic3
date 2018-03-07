@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { MoovieProvider } from '../../providers/moovie/moovie';
+import { FilmeDetalhePage } from '../filme-detalhe/filme-detalhe';
 
 /**
  * Generated class for the FeedPage page.
@@ -30,7 +31,7 @@ export class FeedPage {
 
 
   ionViewDidLoad() {
-    console.log('entrou no controler');
+
     this.movieProvider.getLastMovies().subscribe(
       data=>{
         let objRetorno = JSON.parse((data as any)._body);
@@ -41,5 +42,11 @@ export class FeedPage {
       }
     )
   }
+
+  abreDetalhes(dados){
+    console.log(dados);
+    this.navCtrl.push(FilmeDetalhePage,dados);
+  }
+
 
 }

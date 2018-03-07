@@ -16,6 +16,7 @@ import { HttpModule } from '@angular/http';
 import { FeedPageModule } from '../pages/feed/feed.module';
 import { IntroPageModule } from '../pages/intro/intro.module';
 import { MoovieProvider } from '../providers/moovie/moovie';
+import { FilmeDetalhePageModule } from '../pages/filme-detalhe/filme-detalhe.module';
 
 
 
@@ -33,6 +34,7 @@ import { MoovieProvider } from '../providers/moovie/moovie';
     IonicModule.forRoot(MyApp),
     FeedPageModule,
     IntroPageModule,
+    FilmeDetalhePageModule,
     HttpModule
   ],
   bootstrap: [IonicApp],
